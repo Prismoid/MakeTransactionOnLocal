@@ -1,0 +1,56 @@
+{
+  "contract_name": "Test",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "increment",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "uint128"
+        },
+        {
+          "name": "b",
+          "type": "uint128"
+        }
+      ],
+      "name": "add",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint128"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b600080555b5b60fd806100246000396000f300606060405263ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663d09de08a81146046578063feb99390146068575b600080fd5b3415605057600080fd5b605660b8565b60405190815260200160405180910390f35b3415607257600080fd5b60936fffffffffffffffffffffffffffffffff6004358116906024351660c7565b6040516fffffffffffffffffffffffffffffffff909116815260200160405180910390f35b60008054600101908190555b90565b8181015b929150505600a165627a7a72305820253ae590a312e8ddb3fbc3e09e9653920be14346bb101605ceb9f65cd71cbf9f0029",
+  "networks": {
+    "1": {
+      "events": {},
+      "links": {},
+      "address": "0xe0ccddba7224973ec7df855442abc9f1809407b2",
+      "updated_at": 1509539426913
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1509539426913
+}
