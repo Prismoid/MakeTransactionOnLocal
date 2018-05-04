@@ -10,7 +10,7 @@ const Wallet = require('ethereumjs-wallet'); // install
 
 // making a contract instance (Test)
 var contract_json = require('../build/contracts/Test.json');
-var addr = contract_json.networks[1].address;
+var addr = contract_json.networks[10].address;
 var abi = contract_json.abi;
 var contract = web3.eth.contract(abi).at(addr);
 
@@ -33,13 +33,22 @@ var EthAddr = "0x" + ethUtils.privateToAddress(privateKey).toString('hex');
 console.log("Local Ethereum Address: " + EthAddr);
 console.log();
 
-// calling a contract function
+// calling a contract function ex1
 var callData = contract.add.getData(100, 300); // 100 + 300
 var result = web3.eth.call({
     to: addr, // contract address
     data: callData
 });
-console.log("contract function's return: " + result); // 100 + 300 = 400 (0x190 in hex)
+console.log("contract function's return(ex1): " + result); // 100 + 300 = 400 (0x190 in hex)
+console.log();
+
+// calling a contract function ex2
+var callData = contract.increment.getData(); // 100 + 300
+var result = web3.eth.call({
+    to: addr, // contract address
+    data: callData
+});
+console.log("contract function's return(ex2): " + result); // 100 + 300 = 400 (0x190 in hex)
 console.log();
 
 // making a transaction from the Ethereum address and the private key, sending it to a Ethereum node and then spreading it in the P2P network
@@ -62,6 +71,6 @@ if (balance == 0) {
     var tx = new Tx(rawTx);
     tx.sign(privateKey);
     var serializedTx = tx.serialize();
-    web3.eth.sendRawTransaction(serializedTx.toString('hex'));
+    web3.eth.sendRawTransaction("0x" + serializedTx.toString('hex'));
     console.log("Sending Tx Success!");
 }
